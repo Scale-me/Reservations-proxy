@@ -16,10 +16,11 @@ app.use('/:id/', express.static('public'));
 app.get('/api/:id/reservations', (req, res) => {
   console.log(req.params)
   request.get(`http://localhost:3002/api/${req.params.id}/reservations/`, function (error, response, body){
-    console.log('error:', error);
-    console.log('statusCode:', response && response.statusCode);
-    console.log('body:', body);
-    res.end()
+    // console.log('error:', error);
+    // console.log('statusCode:', response && response.statusCode);
+    // console.log('body:', body);
+    // res.end()
+    res.send(body)
   })
 })
 
